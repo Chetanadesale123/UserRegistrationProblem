@@ -32,5 +32,12 @@ namespace TestUserRegestration
             bool mobileNo = us.CheckMobNo("7987612345");
             Assert.IsTrue(mobileNo);
         }
+        [Test]
+        public void TestPassword()
+        {
+            User us = new User();
+            bool password = us.CheckPassword("@123Xyzlmnopq");
+            Assert.IsTrue(password);
+        }
     }
 }
