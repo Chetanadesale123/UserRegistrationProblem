@@ -11,5 +11,12 @@ namespace TestUserRegestration
             bool firstName = us.CheckFirstName("Chetana");
             Assert.IsTrue(firstName);
         }
+        [Test]
+        public void TestLastName()
+        {
+            User us = new User();
+            bool lastName = us.CheckFirstName("Desale");
+            Assert.IsTrue(lastName);
+        }
     }
 }
