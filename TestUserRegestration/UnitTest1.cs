@@ -25,5 +25,12 @@ namespace TestUserRegestration
             bool email = us.CheckEmail("Chetana+desale1999@gmail.com.in");
             Assert.IsTrue(email);
         }
+        [Test]
+        public void TestMobileNo()
+        {
+            User us = new User();
+            bool mobileNo = us.CheckMobNo("7987612345");
+            Assert.IsTrue(mobileNo);
+        }
     }
 }
