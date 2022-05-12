@@ -6,7 +6,7 @@ namespace UserRegistrationProblem
         public static string NAME_REGEX = "^[A-Z]{1}[A-Za-z]{3,}$";
         public static string MOBILE_NUMBER_REGEX = "^[6-9]{1}[0-9]{9}$";
         public static string EMAIL_REGEX = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
-        public static string PASSWORD_REGEX = "^[A-Z]{1,}[a-z0-9]{8,}";
+        public static string PASSWORD_REGEX = "^[A-Za-z0-9]{8,}$";
         public bool CheckFirstName(string firstName)
         {
             return Regex.IsMatch(firstName, NAME_REGEX);
