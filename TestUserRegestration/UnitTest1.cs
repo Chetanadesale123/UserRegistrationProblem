@@ -36,7 +36,7 @@ namespace TestUserRegestration
         public void GivenStringInput_WhenTestUserRegistration_ShouldReturnPassword()
         {
             User us = new User();
-            bool password = us.CheckPassword("@123Xyzlmnopq");
+            bool password = us.CheckPassword("India1234");
             Assert.IsTrue(password);
         }
     }
