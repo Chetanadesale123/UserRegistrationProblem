@@ -7,10 +7,12 @@ namespace UserRegistrationProblem
         public static string MOBILE_NUMBER_REGEX = "^[6-9]{1}[0-9]{9}$";
         public static string EMAIL_REGEX = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
         public static string PASSWORD_REGEX = "^[!@#]{1}[A-Za-z0-9]{7,}$";
-        public bool CheckFirstName(string firstName)
-        {
-            return Regex.IsMatch(firstName, NAME_REGEX);
-        }
+        //public bool CheckFirstName(string firstName)
+        //{
+        //    return Regex.IsMatch(firstName, NAME_REGEX);
+        //}
+        public bool CheckFirstName(String FirstName) =>(Regex.IsMatch(FirstName, NAME_REGEX));
+       
         public bool CheckLASTName(string lastName)
         {
             return Regex.IsMatch(lastName, NAME_REGEX);
