@@ -27,5 +27,17 @@ namespace UserRegistrationProblem
         {
             return Regex.IsMatch(password, PASSWORD_REGEX);
         }
+        public string CheckEmailsUsingParameterizedTest(string emailAddress)
+        {
+            if(Regex.IsMatch(emailAddress, EMAIL_REGEX))
+            {
+                Console.WriteLine("Email is matches");
+            }
+            else
+            {
+                Console.WriteLine("Invalid EmailId");
+            }
+            return emailAddress;
+        }
     }
 }

@@ -4,6 +4,7 @@ namespace TestUserRegestration
 {
     public class UnitTest1
     {
+        User us = new User();
         [Test]
         public void GivenStringInput_WhenTestUserRegistration_ShouldReturnFirstName()
         {
@@ -57,6 +58,17 @@ namespace TestUserRegestration
             User us = new User();
             bool password = us.CheckPassword("@India12");
             Assert.IsTrue(password);
+        }
+        [Test]
+        [TestCase("abc@yahoo.com")]
+        [TestCase("abc-100@yahoo.com")]
+        [TestCase("Chetana+desale1999@gmail.com.in")]
+        [TestCase("abc.100@abc.com.au")]
+        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnEmailParameterizedTest(string emailAddress)
+        {
+            User us = new User();
+            string result = us.CheckEmailsUsingParameterizedTest(emailAddress);
+            Assert.AreEqual(result,emailAddress);
         }
     }
 }
