@@ -22,6 +22,7 @@ namespace TestUserRegestration
         public void GivenStringInput_WhenTestUserRegistration_ShouldReturnEmail()
         {
             User us = new User();
+            
             bool email = us.CheckEmail("Chetana+desale1999@gmail.com.in");
             bool email1 = us.CheckEmail("abc@yahoo.com");
             bool email2 = us.CheckEmail("abc-100@yahoo.com");
