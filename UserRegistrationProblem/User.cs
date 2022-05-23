@@ -14,91 +14,102 @@ namespace UserRegistrationProblem
             this.message = message;
             
         }
-        public bool CheckFirstName(string firstName)
-        { 
-            try
-            {
-                if (NAME_REGEX != firstName )
-                {
-                    throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_FIRSTNAME, "name is invalid");
-                }
-                return Regex.IsMatch(firstName, NAME_REGEX);
-            }
-            catch(UserDetailsException ex)
-            {
-                return ex.Message == "FirstName is invalid";
-            }
-        }
-        public bool CheckLASTName(string lastName)
-        {
-            try
-            {
-                if (NAME_REGEX != lastName)
-                {
-                    throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_LASTNAME, "Lastname is invalid");
-                }
-                return Regex.IsMatch(lastName, NAME_REGEX);
-            }
-            catch(UserDetailsException ex)
-            {
-                return ex.Message == "Last Name Is Invalid";
-            }
-        }
-        public bool CheckEmail(string email)
-        {
-            try
-            {
-                if (NAME_REGEX != email)
-                {
-                    throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_EMAIL, "Email is invalid");
-                }
-                return Regex.IsMatch(email, EMAIL_REGEX);
-            }catch(UserDetailsException ex)
-            {
-                return ex.Message == "Email is Invalid";
-            }
-            
-        }
-        public bool CheckMobNo(string mobileno)
-        {
-            try
-            {
-                if (NAME_REGEX != mobileno)
-                {
-                    throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_MOBILENO, "Mobile is invalid");
-                }
-                return Regex.IsMatch(mobileno, MOBILE_NUMBER_REGEX);
-            }catch (UserDetailsException ex)
-            {
-                return ex.Message == "Mobile No is invalid";
-            }
-        }
-        public bool CheckPassword(string password)
-        {
-            try
-            {
-                if (NAME_REGEX != password)
-                {
-                    throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_PASSWORD, "Password is invalid");
-                }
-                return Regex.IsMatch(password, PASSWORD_REGEX);
-            }
-            catch(UserDetailsException ex)
-            {
-                return ex.Message == "Password Is Invalid";
-            }
-        }
-        public string CheckEmailsUsingParameterizedTest(string emailAddress)
-        {
-            if(Regex.IsMatch(emailAddress, EMAIL_REGEX))
-            {
-                Console.WriteLine("Email is matches");
-            }
-            else
-            {
-                Console.WriteLine("Invalid EmailId");
-            }
-            return emailAddress;
-        }
+        public bool CheckFirstName(String FirstName) => (Regex.IsMatch(FirstName, NAME_REGEX) ? true : throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_FIRSTNAME,"FirstName is invalid"));
+        //        }
+
+        //public  bool CheckFirstName(string firstName) 
+        //{ 
+        //    try
+        //    {
+        //        // bool CheckFirstName(String FirstName) => (Regex.IsMatch(FirstName, NAME_REGEX));
+        //        if (NAME_REGEX != firstName )
+        //        {
+        //            throw new UserDetailsException(UserDetailsException.ExceptionType.INVARSTNAMLID_FIE, "name is invalid");
+        //        }
+        //      // public bool CheckFirstName(String FirstName) => (Regex.IsMatch(FirstName, NAME_REGEX));
+        //        return Regex.IsMatch(firstName, NAME_REGEX);
+        //    }
+        //    catch(UserDetailsException ex)
+        //    {
+        //        return ex.Message == "FirstName is invalid";
+        //    }
+        //}
+        public bool CheckLastName(String LastName) => (Regex.IsMatch(LastName, NAME_REGEX) ? true : throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_LASTNAME, "LastName Is invalid"));
+        //public bool CheckLASTName(string lastName)
+        //{
+        //    try
+        //    {
+        //        if (NAME_REGEX != lastName)
+        //        {
+        //            throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_LASTNAME, "Lastname is invalid");
+        //        }
+        //        return Regex.IsMatch(lastName, NAME_REGEX);
+        //    }
+        //    catch(UserDetailsException ex)
+        //    {
+        //        return ex.Message == "Last Name Is Invalid";
+        //    }
+        //}
+        public bool CheckEmail(String email) => (Regex.IsMatch(email, EMAIL_REGEX) ? true : throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_EMAIL, "Email is invalid"));
+        //public bool CheckEmail(string email)
+        //{
+        //    try
+        //    {
+        //        if (NAME_REGEX != email)
+        //        {
+        //            throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_EMAIL, "Email is invalid");
+        //        }
+        //        return Regex.IsMatch(email, EMAIL_REGEX);
+        //    }catch(UserDetailsException ex)
+        //    {
+        //        return ex.Message == "Email is Invalid";
+        //    }
+
+        //}
+        public bool CheckMobNo(String email) => (Regex.IsMatch(email, MOBILE_NUMBER_REGEX) ? true : throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_MOBILENO, "Mobile is invalid"));
+
+        //public bool CheckMobNo(string mobileno)
+        //{
+        //    try
+        //    {
+        //        if (NAME_REGEX != mobileno)
+        //        {
+        //            throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_MOBILENO, "Mobile is invalid");
+        //        }
+        //        return Regex.IsMatch(mobileno, MOBILE_NUMBER_REGEX);
+        //    }catch (UserDetailsException ex)
+        //    {
+        //        return ex.Message == "Mobile No is invalid";
+        //    }
+        //}
+        public bool CheckPassWord(String email) => (Regex.IsMatch(email, PASSWORD_REGEX) ? true : throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_PASSWORD, "Password is invalid"));
+        //public bool CheckPassword(string password)
+        //{
+        //    try
+        //    {
+        //        if (NAME_REGEX != password)
+        //        {
+        //            throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_PASSWORD, "Password is invalid");
+        //        }
+        //        return Regex.IsMatch(password, PASSWORD_REGEX);
+        //    }
+        //    catch(UserDetailsException ex)
+        //    {
+        //        return ex.Message == "Password Is Invalid";
+        //    }
+        //}
+        public bool CheckEmailsUsingParameterizedTest(String email) => (Regex.IsMatch(email, EMAIL_REGEX) ? true : throw new UserDetailsException(UserDetailsException.ExceptionType.INVALID_EMAIL, "Email is invalid"));
+        //public string CheckEmailsUsingParameterizedTest(string emailAddress)
+        //{
+        //    if(Regex.IsMatch(emailAddress, EMAIL_REGEX))
+        //    {
+        //        Console.WriteLine("Email is matches");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Invalid EmailId");
+        //    }
+        //    return emailAddress;
+        //}
     }
 }

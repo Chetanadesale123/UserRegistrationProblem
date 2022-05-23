@@ -5,36 +5,35 @@ namespace TestUserRegestration
     public class UnitTest1
     {
         [Test]
-        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnFirstName(string message)
+        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnFirstName()
         {
             try
             {
                 User us = new User("INVALID_FIRSTNAME");
-                bool firstName = us.CheckFirstName("chetana");
+                bool firstName = us.CheckFirstName("Chetana");
                 Assert.IsTrue(firstName);
             }
             catch(UserDetailsException ex) 
             {
-                Assert.AreEqual("FirstName is invalid", ex.Message);
+                Assert.AreEqual(ex.Message,"FirstName is invalid");
             }
-             
         }
         [Test]
-        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnLastName(string message)
+        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnLastName()
         {
             try
             {
                 User us = new User("INVALID_LASTNAME");
-                bool lastName = us.CheckLASTName("Desale");
+                bool lastName = us.CheckLastName("Desale");
                 Assert.IsTrue(lastName);
             }
             catch(UserDetailsException ex)
             {
-                Assert.AreEqual("LastName Is invalid", ex.Message);
+                Assert.AreEqual(ex.Message, "LastName Is invalid");
             }
         }
         [Test]
-        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnEmail(string message)
+        public void GivenStringInput_WhenTestUserRegistration_ShouldReturnEmail()
         {
             try
             {
@@ -62,7 +61,7 @@ namespace TestUserRegestration
             }
             catch(UserDetailsException ex)
             {
-                Assert.AreEqual("Email is Invalid",ex.Message);
+                Assert.AreEqual(ex.Message,"Email is Invalid");
             }
         }
         [Test]
@@ -85,7 +84,7 @@ namespace TestUserRegestration
             try
             {
                 User us = new User("INVALID_PASSWORD");
-                bool password = us.CheckPassword("@India12");
+                bool password = us.CheckPassWord("@India12");
                 Assert.IsTrue(password);
             }
             catch (UserDetailsException ex)
@@ -100,9 +99,15 @@ namespace TestUserRegestration
         [TestCase("abc.100@abc.com.au")]
         public void GivenStringInput_WhenTestUserRegistration_ShouldReturnEmailParameterizedTest(string emailAddress)
         {
-            User us = new User("Chetana@.com");
-            string result = us.CheckEmailsUsingParameterizedTest(emailAddress);
-            Assert.AreEqual(result, emailAddress);
+            try
+            {
+                User us = new User("INVALID_EMAIL");
+                bool result = us.CheckEmailsUsingParameterizedTest("Chetana+desale1999@gmail.com.in");
+            }
+            catch (UserDetailsException ex)
+            {
+                Assert.AreEqual(ex.Message,"Email is Invalid");
+            }
         }
     }
 }
